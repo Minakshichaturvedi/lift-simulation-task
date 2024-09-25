@@ -1,0 +1,188 @@
+/* General reset and box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  background-color: rgb(116, 85, 85);
+  color: antiquewhite;
+  padding: 10px;
+  margin-bottom: auto;
+  box-shadow: rgb(25, 23, 23);
+}
+
+header h1 {
+  font-size: 80px;
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+  display: flex;
+}
+
+/* Body styles */
+body {
+  display: flex;
+  flex-direction: column;
+  color: rgb(13, 15, 15);
+  background-color: antiquewhite;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Input container styles */
+#input-container {
+  font-family: 'Courier New';
+  font-style: italic;
+  font-weight: 400;
+  color: rgb(7, 11, 14);
+  border-radius: 40px;
+  border-color: black;
+  width: 100%;
+  margin: auto;
+  max-width: 100%;
+  padding: 10px;
+}
+
+/* Submit button styles */
+#submit-btn {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: #efeff4;
+  font-size: 20px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+  color: rgba(232, 134, 15, 0.906);
+}
+
+/* Floor styles */
+.floor {
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  border-bottom: 2px solid #0c0b0b;
+  position: relative;
+  padding-right: 20px;
+  display: flex;
+}
+
+/* Floor number styles */
+.floor-number {
+  font-family: auto;
+  font-weight: bold;
+  width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Lift container styling to ensure scrolling */
+#container {
+  position: relative;
+  overflow-y: scroll; 
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column-reverse; /* Start with ground floor at the bottom */
+  /* overflow: hidden; */
+  overflow-x: auto;
+  
+}
+
+/* Lift styling */
+.lift {
+  position: absolute;
+  /* position: relative; */
+  bottom: 0; 
+  width: 70px;
+  height: 100px;
+  background-color: gray;
+  transition: transform 2s ease-in-out;
+  overflow: hidden;
+ 
+}
+
+/* Lift door styles */
+
+
+.left-lift-door {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: rgb(83, 77, 77);
+  z-index: 1;
+  transition: transform 2s ease-in-out;
+  left: 0;
+  transform-origin: left;
+  border: 1px solid rgb(33, 31, 31);;
+}
+
+.right-lift-door {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: rgb(83, 77, 77);
+  z-index: 1;
+  transition: transform 2s ease-in-out;
+  right: 0;
+  transform-origin: right;
+  border: 1px solid rgb(33, 31, 31);
+}
+
+
+
+.left-lift-door-close {
+  transform: translateX(0%);
+}
+
+.right-lift-door-close {
+  transform: translateX(0%);
+}
+
+.left-lift-door-open {
+  transform: translateX(-100%);
+}
+
+.right-lift-door-open{
+  transform: translateX(100%);
+}
+
+/* Button styles */
+.working-btn {
+  font-size: 10px;
+  color: #eeeef5;
+  margin: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  outline: #3a3c3c;
+  cursor: pointer;
+  transition: transform 250ms;
+  margin-top: 0.5px;
+}
+
+.working-btn:hover {
+  transform: scale(1.1);
+}
+
+.working-btn--up {
+  background-color: #02e524;
+  margin-right: 1rem;
+}
+
+.working-btn--down {
+  background-color: #eb144d;
+  margin-right: 1rem;
+}
+
+.working-btn[disabled] {
+  opacity: -0.1;
+  cursor: default;
+  
+}
